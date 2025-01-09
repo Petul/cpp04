@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:12:21 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/09 13:37:16 by pleander         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:25:36 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,9 @@ Animal& Animal::operator=(const Animal& a)
 	}
 	this->type = a.type;
 	return (*this);
+}
+
+std::string Animal::getType()
+{
+	return (this->type);
 }
