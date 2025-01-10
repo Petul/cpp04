@@ -17,13 +17,13 @@
 Dog::Dog()
 {
 	std::cout << "Dog default constructor called." << std::endl;
-	this->type = "Dog";
+	this->type_ = "Dog";
 }
 
 Dog::Dog(const Dog& d)
 {
 	std::cout << "Dog copy constructor called." << std::endl;
-	this->type = d.type;
+	this->type_ = d.type_;
 }
 
 Dog::~Dog()
@@ -38,11 +38,11 @@ Dog& Dog::operator=(const Dog& a)
 	{
 		return (*this);
 	}
-	this->type = a.type;
+	this->type_ = a.type_;
 	return (*this);
 }
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
 	std::cout << "Bark!" << std::endl;
 }

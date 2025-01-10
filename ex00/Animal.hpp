@@ -22,10 +22,11 @@ class Animal
 	Animal(const Animal& a);
 	~Animal();
 	Animal& operator=(const Animal& a);
-	std::string getType();
+	std::string getType() const;
+	virtual void makeSound() const;
 
    protected:
-	std::string type;
+	std::string type_;
 };
 
 #endif

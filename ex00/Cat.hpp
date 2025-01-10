@@ -23,7 +23,7 @@ class Cat : public Animal
 	Cat& operator=(const Cat& d);
 	~Cat();
 
-	void makeSound();
+	void makeSound() const override;
 };
 
 #endif

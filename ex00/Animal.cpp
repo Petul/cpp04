@@ -14,12 +14,12 @@
 
 #include <iostream>
 
-Animal::Animal() : type{"None"}
+Animal::Animal() : type_{"None"}
 {
 	std::cout << "Animal default constructor called." << std::endl;
 }
 
-Animal::Animal(const Animal& a) : type{a.type}
+Animal::Animal(const Animal& a) : type_{a.type_}
 {
 	std::cout << "Animal copy constructor called." << std::endl;
 }
@@ -36,11 +36,16 @@ Animal& Animal::operator=(const Animal& a)
 	{
 		return (*this);
 	}
-	this->type = a.type;
+	this->type_ = a.type_;
 	return (*this);
 }
 
-std::string Animal::getType()
+std::string Animal::getType() const
 {
-	return (this->type);
+	return (this->type_);
+}
+
+void Animal::makeSound() const
+{
+	std::cout << "???" << std::endl;
 }
