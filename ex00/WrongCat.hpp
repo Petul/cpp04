@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 13:38:49 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/09 13:45:47 by pleander         ###   ########.fr       */
+/*   Created: 2025/01/11 16:15:54 by pleander          #+#    #+#             */
+/*   Updated: 2025/01/11 16:15:55 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef WRONG_CAT_HPP
+#define WRONG_CAT_HPP
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog : public Animal
+class WrongCat : public WrongAnimal
 {
    public:
-	Dog();
-	Dog(const Dog& d);
-	Dog& operator=(const Dog& d);
-	~Dog() override;
+	WrongCat();
+	WrongCat(const WrongCat& d);
+	WrongCat& operator=(const WrongCat& d);
+	~WrongCat() override;
 	void makeSound() const override;
 };
 

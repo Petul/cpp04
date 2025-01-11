@@ -14,13 +14,13 @@
 
 #include <iostream>
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
 	std::cout << "Cat default constructor called." << std::endl;
 	this->type_ = "Cat";
 }
 
-Cat::Cat(const Cat& d)
+Cat::Cat(const Cat& d) : Animal(d)
 {
 	std::cout << "Cat copy constructor called." << std::endl;
 	this->type_ = d.type_;

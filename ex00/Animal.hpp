@@ -20,7 +20,7 @@ class Animal
    public:
 	Animal();
 	Animal(const Animal& a);
-	~Animal();
+	virtual ~Animal();
 	Animal& operator=(const Animal& a);
 	std::string getType() const;
 	virtual void makeSound() const;

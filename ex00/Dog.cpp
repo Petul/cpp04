@@ -14,13 +14,13 @@
 
 #include <iostream>
 
-Dog::Dog()
+Dog::Dog() : Animal()
 {
 	std::cout << "Dog default constructor called." << std::endl;
 	this->type_ = "Dog";
 }
 
-Dog::Dog(const Dog& d)
+Dog::Dog(const Dog& d) : Animal(d)
 {
 	std::cout << "Dog copy constructor called." << std::endl;
 	this->type_ = d.type_;
