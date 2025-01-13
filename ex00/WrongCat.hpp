@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 16:15:54 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/11 16:15:55 by pleander         ###   ########.fr       */
+/*   Updated: 2025/01/13 09:19:25 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class WrongCat : public WrongAnimal
 	WrongCat(const WrongCat& d);
 	WrongCat& operator=(const WrongCat& d);
 	~WrongCat() override;
-	void makeSound() const override;
+	void makeSound() const;
 };
 
 #endif

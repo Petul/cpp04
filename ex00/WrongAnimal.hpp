@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 16:14:12 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/11 16:14:13 by pleander         ###   ########.fr       */
+/*   Updated: 2025/01/13 09:19:07 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongAnimal
 	virtual ~WrongAnimal();
 	WrongAnimal& operator=(const WrongAnimal& a);
 	std::string getType() const;
-	virtual void makeSound() const;
+	void makeSound() const;
 
    protected:
 	std::string type_;

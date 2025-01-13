@@ -1,13 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                         :+:      :+:    :+:
- */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 13:12:21 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/09 15:25:36 by pleander         ###   ########.fr       */
+/*   Created: 2025/01/13 09:16:58 by pleander          #+#    #+#             */
+/*   Updated: 2025/01/13 09:17:13 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +47,5 @@ std::string WrongAnimal::getType() const
 
 void WrongAnimal::makeSound() const
 {
-	std::cout << "???" << std::endl;
+	std::cout << "WrongAnimal sound" << std::endl;
 }

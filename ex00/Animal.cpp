@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:12:21 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/09 15:25:36 by pleander         ###   ########.fr       */
+/*   Updated: 2025/01/13 09:17:27 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ std::string Animal::getType() const
 
 void Animal::makeSound() const
 {
-	std::cout << "???" << std::endl;
+	std::cout << "Animal sound" << std::endl;
 }

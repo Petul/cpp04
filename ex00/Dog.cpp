@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:46:09 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/09 13:51:19 by pleander         ###   ########.fr       */
+/*   Updated: 2025/01/13 09:17:37 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ Dog& Dog::operator=(const Dog& a)
 
 void Dog::makeSound() const
 {
-	std::cout << "Bark!" << std::endl;
+	std::cout << "Woof!" << std::endl;
 }

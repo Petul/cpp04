@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:20:00 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/09 15:23:45 by pleander         ###   ########.fr       */
+/*   Updated: 2025/01/13 09:31:48 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongCat.hpp"
 
 int main(void)
 {
@@ -26,4 +27,11 @@ int main(void)
 	i->makeSound();  // will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+
+	const WrongAnimal* k = new WrongCat();
+	k->makeSound();
+	delete meta;
+	delete i;
+	delete j;
+	delete k;
 }
