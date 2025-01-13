@@ -13,7 +13,7 @@
 NAME := Brain
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++11
-SOURCES := main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SOURCES := main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJECTS := $(SOURCES:.cpp=.o)
 

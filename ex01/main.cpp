@@ -18,9 +18,39 @@
 
 int main(void)
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	std::cout << "\nTest memory allocation and deletion" << std::endl;
+	int n{5};
+	Animal* arr[n];
 
-	delete j;
-	delete i;
+	for (int i = 0; i < n / 2; i++)
+	{
+		arr[i] = new Dog();
+	}
+	for (int i = n / 2; i < n; i++)
+	{
+		arr[i] = new Cat();
+	}
+	for (int i = 0; i < n; i++)
+	{
+		delete arr[i];
+	}
+
+	std::cout << "\nTest deep copies" << std::endl;
+	Dog dog1;
+	dog1.getBrain()->addIdea(0, "Dig holes in the ground");
+	dog1.getBrain()->addIdea(1, "Sleep on the couch");
+	Dog dog2{dog1};
+
+	dog1.getBrain()->showIdea(0);
+	dog1.getBrain()->showIdea(1);
+	dog2.getBrain()->showIdea(0);
+	dog2.getBrain()->showIdea(1);
+
+	dog1.getBrain()->addIdea(0, "Chase squirrels");
+	dog1.getBrain()->addIdea(1, "Bark at neighbor");
+
+	dog1.getBrain()->showIdea(0);
+	dog1.getBrain()->showIdea(1);
+	dog2.getBrain()->showIdea(0);
+	dog2.getBrain()->showIdea(1);
 }

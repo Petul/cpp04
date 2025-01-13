@@ -15,6 +15,8 @@
 
 #include <string>
 
+#include "Brain.hpp"
+
 class Animal
 {
    public:

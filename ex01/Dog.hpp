@@ -24,6 +24,7 @@ class Dog : public Animal
 	Dog& operator=(const Dog& d);
 	~Dog() override;
 	void makeSound() const override;
+	Brain* getBrain();
 
    private:
 	Brain* brain_;
