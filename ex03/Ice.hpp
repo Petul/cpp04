@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:54:41 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/13 22:02:14 by pleander         ###   ########.fr       */
+/*   Updated: 2025/01/14 11:25:11 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Ice : public AMateria
 	Ice& operator=(const Ice& o);
 	~Ice();
 	std::string const& getType() const;  // Returns the materia type
-	virtual Ice* clone() const override;
-	virtual void use(ICharacter& target) override;
+	Ice* clone() const override;
+	void use(ICharacter& target) override;
 };
 #endif

@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:41:24 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/13 22:27:15 by pleander         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:05:04 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,10 @@ std::string const& Character::getName() const
 
 void Character::equip(AMateria* m)
 {
+	if (!m)
+	{
+		return;
+	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (!this->inventory_[i])
@@ -89,7 +93,7 @@ void Character::equip(AMateria* m)
 }
 void Character::unequip(int idx)
 {
-	if (idx > 0 && idx < 4)
+	if (idx >= 0 && idx < 4)
 	{
 		if (this->inventory_[idx])
 		{
@@ -99,20 +103,18 @@ void Character::unequip(int idx)
 				{
 					this->floor_[i] = this->inventory_[idx];
 					this->inventory_[idx] = nullptr;
-				}
-				else
-				{
-					std::cout << "Error: Cannot discard materia, floor is full"
-					          << std::endl;
+					return;
 				}
 			}
+			std::cout << "Error: Cannot discard materia, floor is full"
+			          << std::endl;
 		}
 	}
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx > 0 && idx < 4)
+	if (idx >= 0 && idx < 4)
 	{
 		if (this->inventory_[idx])
 		{

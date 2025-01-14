@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 14:02:13 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/13 22:02:24 by pleander         ###   ########.fr       */
+/*   Updated: 2025/01/14 11:25:25 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Cure : public AMateria
 	Cure& operator=(const Cure& o);
 	~Cure();
 	std::string const& getType() const;  // Returns the materia type
-	virtual Cure* clone() const override;
-	virtual void use(ICharacter& target) override;
+	Cure* clone() const override;
+	void use(ICharacter& target) override;
 };
 #endif

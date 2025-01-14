@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 14:02:43 by pleander          #+#    #+#             */
-/*   Updated: 2025/01/14 12:01:04 by pleander         ###   ########.fr       */
+/*   Created: 2025/01/14 09:54:59 by pleander          #+#    #+#             */
+/*   Updated: 2025/01/14 10:02:01 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
-
-#include <iostream>
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
 #include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-Cure::Cure() : AMateria("cure")
+class MateriaSource : public IMateriaSource
 {
-}
-Cure::Cure(const Cure& o) : AMateria("cure")
-{
-	(void)o;
-}
-Cure::~Cure()
-{
-}
-Cure& Cure::operator=(const Cure& o)
-{
-	(void)o;
-	return (*this);
-}
-Cure* Cure::clone() const
-{
-	return (new Cure());
-}
-void Cure::use(ICharacter& target)
-{
-	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
-}
+   public:
+	MateriaSource();
+	MateriaSource(const MateriaSource& o);
+	MateriaSource& operator=(const MateriaSource& o);
+	~MateriaSource() override;
+
+	void learnMateria(AMateria*) override;
+	AMateria* createMateria(std::string const& type) override;
+
+   private:
+	AMateria* learned_materias_[4];
+};
+
+#endif
