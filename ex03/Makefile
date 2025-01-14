@@ -12,7 +12,7 @@
 
 NAME := Interface
 CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++11 -g -fstandalone-debug
+CXXFLAGS := -Wall -Wextra -Werror -std=c++11
 SOURCES := AMateria.cpp Character.cpp Cure.cpp Ice.cpp ICharacter.cpp main.cpp MateriaSource.cpp
 
 OBJECTS := $(SOURCES:.cpp=.o)
