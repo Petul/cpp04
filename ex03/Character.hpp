@@ -30,5 +30,6 @@ class Character : public ICharacter
    private:
 	std::string name_;
 	AMateria* inventory_[4];
+	AMateria* floor_[10];
 };
 #endif

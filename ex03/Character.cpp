@@ -12,6 +12,8 @@
 
 #include "Character.hpp"
 
+#include <iostream>
+
 #include "AMateria.hpp"
 
 Character::Character(const std::string name) : name_{name}
@@ -19,6 +21,7 @@ Character::Character(const std::string name) : name_{name}
 	for (int i = 0; i < 4; i++)
 	{
 		this->inventory_[i] = nullptr;
+		this->floor_[i] = nullptr;
 	}
 }
 
@@ -26,6 +29,7 @@ Character::Character(const Character& o) : name_{o.name_}
 {
 	for (int i = 0; i < 4; i++)
 	{
+		this->floor_[i] = nullptr;
 		if (o.inventory_[i])
 		{
 			this->inventory_[i] = o.inventory_[i]->clone();
@@ -63,6 +67,7 @@ Character::~Character()
 	for (int i = 0; i < 4; i++)
 	{
 		delete this->inventory_[i];
+		delete this->floor_[i];
 	}
 }
 
@@ -86,14 +91,32 @@ void Character::unequip(int idx)
 {
 	if (idx > 0 && idx < 4)
 	{
-		this->inventory_[idx] = nullptr;
+		if (this->inventory_[idx])
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				if (!this->floor_[i])
+				{
+					this->floor_[i] = this->inventory_[idx];
+					this->inventory_[idx] = nullptr;
+				}
+				else
+				{
+					std::cout << "Error: Cannot discard materia, floor is full"
+					          << std::endl;
+				}
+			}
+		}
 	}
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (this->inventory_[idx])
+	if (idx > 0 && idx < 4)
 	{
-		this->inventory_[idx]->use(target);
+		if (this->inventory_[idx])
+		{
+			this->inventory_[idx]->use(target);
+		}
 	}
 }
